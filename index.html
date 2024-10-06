@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Inventory Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .inventory-list {
+            margin-top: 20px;
+        }
+        .inventory-list h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        table th {
+            background-color: #f4f4f4;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .summary {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Dynamic Smart Inventory Management</h1>
+
+    <div class="form-group">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" placeholder="Enter product name">
+    </div>
+
+    <div class="form-group">
+        <label for="productPrice">Product Price:</label>
+        <input type="number" id="productPrice" placeholder="Enter product price">
+    </div>
+
+    <div class="form-group">
+        <label for="productQuantity">Product Quantity:</label>
+        <input type="number" id="productQuantity" placeholder="Enter product quantity">
+    </div>
+
+    <button class="button" onclick="addProduct()">Add Product</button>
+
+    <div class="inventory-list">
+        <h2>Inventory:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="inventoryTable">
+                <!-- Inventory items will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="summary">
+        <h3>Summary:</h3>
+        <p><strong>Total Inventory Value:</strong> $<span id="totalValue">0</span></p>
+        <p><strong>Most Expensive Product:</strong> <span id="mostExpensive">None</span></p>
+        <p><strong>Total Number of Products:</strong> <span id="totalProducts">0</span></p>
+    </div>
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>
